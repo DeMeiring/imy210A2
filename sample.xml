@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<books
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:gb="https://realbooks.cn/ns/1.0/gb"
+	xmlns:gr="https://realbooks.cn/ns/1.0/gr"
+	xsi:noNamespaceSchemaLocation="a2.xsd"
+	>
+	
+	<gb:book>
+		<titles>	
+			<title>Rocky: The Big Payback</title>
+			<title>Rocky Series</title>
+			<title>Volume 1 of Rocky</title>
+		</titles>
+		<information>
+			<author>Martin Kellerman</author>
+			<publisher location="Seattle, Washington, United States">Fantagraphics</publisher>
+			<date>2005</date>
+			<isbn version="2">1560976799</isbn>
+			<isbn>9781560976790</isbn>
+			<length>114</length>
+			<subjects>	
+				<subject>Comics &amp; Graphic Novels</subject>
+				<subject>General</subject>
+			</subjects>
+		</information>
+	</gb:book>
+
+	<gr:book>
+		<title>The Anubis Gates</title>
+		<authors>
+			<author>Tim Powers</author>
+		</authors>
+		<rating>
+			<overall>4</overall>
+			<rate>13924</rate>
+			<review>1266</review>
+		</rating>
+		<synopsis lang="en">
+			<b>Brendan Doyle</b>, a specialist in the work of the early-nineteenth century poet <b>William Ashbless</b>, reluctantly accepts an invitation from a millionaire to act as a guide to time-travelling tourists. But while attending a lecture given by <b>Samuel Taylor Coleridge</b> in <i>1810</i>, he becomes marooned in Regency London, where dark and dangerous forces know about the gates in time. Caught up in the intrigue between rival bands of beggars, pursued by Egyptian sorcerers, befriended by Coleridge, Doyle somehow survives. And learns more about the mysterious <b>Ashbless</b> than he could ever have imagined possible.
+		</synopsis>
+		<genres>
+			<genre>Fantasy</genre>
+			<genre>Science Fiction</genre>
+			<genre>Fiction</genre>
+		</genres>
+	</gr:book>
+</books>

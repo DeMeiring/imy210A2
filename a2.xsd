@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<xs:schema 
+xmlns:xs="http://www.w3.org/2001/XMLSchema"
+xmlns:gb="https://realbooks.cn/ns/1.0/gb"
+xmlns:gr="https://realbooks.cn/ns/1.0/gr"
+>
+
+
+<xs:import namespace="https://realbooks.cn/ns/1.0/gb" schemaLocation="GB.xsd"/>
+<xs:import namespace="https://realbooks.cn/ns/1.0/gr" schemaLocation="GR.xsd"/>
+
+<xs:element name="books">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element ref="book"/>
+			<xs:element ref="gb:book"/>
+			<xs:element ref="gr:book"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:element>
+
+<xs:element name="book" type="xs:string"/>
+
+
+</xs:schema>

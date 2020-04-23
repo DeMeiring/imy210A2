@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="https://realbooks.cn/ns/1.0/gr"
+>
+	<xs:element name="date" type="xs:string"/>
+	<xs:element name="b" type="xs:string"/>
+	<xs:element name="author" type="xs:string"/>
+	<xs:element name="subject" type="xs:string"/>
+	<xs:element name="rank" type="xs:integer"/>
+	<xs:attribute name="lang">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="en"/>
+				<xs:enumeration value="ru"/>
+				<xs:enumeration value="jp"/>
+				<xs:enumeration value="cn"/>
+				<xs:enumeration value="afk"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:element name="book">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="title" minOccurs="0"/>
+				<xs:element ref="authors" minOccurs="0"/>
+				<xs:element ref="rating" minOccurs="0"/>
+				<xs:element ref="synopsis" minOccurs="0"/>
+				<xs:element ref="genres" minOccurs="0"/>
+				<xs:element ref="titles" minOccurs="0"/>
+				<xs:element ref="information" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="isbn">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="version" type="xs:string"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="subjects">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="subject" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="length" type="xs:string"/>
+	<xs:element name="rating">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="rank"/>
+				<xs:element ref="rate"/>
+				<xs:element ref="review"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="i" type="xs:string"/>
+	<xs:element name="titles">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="title" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="synopsis">
+		<xs:complexType mixed="true">
+			<xs:sequence>
+				<xs:choice minOccurs="0" maxOccurs="unbounded">
+					<xs:element ref="b" maxOccurs="unbounded"/>
+					<xs:element ref="i" maxOccurs="unbounded"/>
+				</xs:choice>
+			</xs:sequence>
+			<xs:attribute name="lang" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="title">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:length value="255"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="books">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="book" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="rate" type="xs:integer"/>
+	<xs:element name="review" type="xs:integer"/>
+	<xs:element name="genres">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="5">
+				<xs:element ref="genre" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="genre" type="xs:string"/>
+	<xs:element name="publisher">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attribute name="location" type="xs:string" use="required"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="overall" type="xs:string"/>
+	<xs:element name="information">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="author"/>
+				<xs:element ref="publisher"/>
+				<xs:element ref="date"/>
+				<xs:element ref="isbn" maxOccurs="unbounded"/>
+				<xs:element ref="length"/>
+				<xs:element ref="subjects"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="authors">
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="author"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
